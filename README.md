@@ -1,7 +1,9 @@
+# Appointment booking for patients in distributed service architecture  
+Appointments can be retrieved on any client from a GRPC backend. The data is distributed across dedicated databases per customer as well as a central database and must be retrieved and referenced via the backend(s). Note: If I use terms somewhere for entity types, endpoints, etc., these are only placeholders. How you ultimately name things and which naming conventions you follow is of course up to you.
 
 ## Data:
 This model represents, in a very strongly simplified way, the core entities of our business model. Please use these entities with the specified attributes for the task. You can of course come up with additional attributes (optional). For the creation of mock data, it is not important whether the structure is professionally correct. Meaning: whether the health insurance number or IK corresponds to the actual structure doesn't matter. Also whether the diagnoses for remedies actually exist, doesn't matter.
-
+![ERD](mixed-db-er.png)
 
 
 ### Entitytypes:  
@@ -13,6 +15,7 @@ This model represents, in a very strongly simplified way, the core entities of o
 
 ### Distribution
 The second model represents, in simplified form, the relationship between the physical data structures:  
+![ERD](mixed-db-dist.png)
 - each company (it's enough to use two for the task) has its "own" database, which can be uniquely assigned to it (for example, via the name).  
 - Some of the entities should only be represented in this respective customer database (therapist, individual remedy, appointment).  
 - Other globally identifiable entities, which are referenced by multiple customer databases, are stored in a central database (patient, practice, fixed remedy).  
