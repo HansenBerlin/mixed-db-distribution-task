@@ -1,7 +1,8 @@
 
 ## Data:
-- a simplified ER model is attached. This represents, in a very strongly simplified way, the core entities of our business model. Please use these entities with the specified attributes for the task. You can of course come up with additional attributes (optional).
-- For the creation of mock data, it is not important whether the structure is professionally correct. Meaning: whether the health insurance number or IK corresponds to the actual structure doesn't matter. Also whether the diagnoses for remedies actually exist, doesn't matter.
+This model represents, in a very strongly simplified way, the core entities of our business model. Please use these entities with the specified attributes for the task. You can of course come up with additional attributes (optional). For the creation of mock data, it is not important whether the structure is professionally correct. Meaning: whether the health insurance number or IK corresponds to the actual structure doesn't matter. Also whether the diagnoses for remedies actually exist, doesn't matter.
+
+
 
 ### Entitytypes:  
 - Practice: Multiple practices can be assigned to a company. The company does not necessarily have to be modeled as an entity in the resulting data structure, as it is isolated in the form of its own database (more on that later). Practice has, with the institution code (IK), a natural, globally unique key.  
