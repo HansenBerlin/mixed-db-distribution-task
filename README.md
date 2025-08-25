@@ -24,6 +24,8 @@ The second model represents, in simplified form, the relationship between the ph
 ### DBMS
 - for the customer databases, any SQL-capable DBMS can be used.
 - for the central database, either an SQL or a NoSQL DB can be used
+- init scripts for creating the schema must be provided
+- no ORM
 
 ## Backend(s)
 - it is sufficient to create a single GRPC backend which can directly access all databases and provide the endpoints
@@ -52,7 +54,5 @@ The following endpoints are available (function, authentication):
 You can choose what to provide client-side to test the data retrieval. This can be a terminal application, a web frontend, or even a shared workspace for Postman. What's important is that the corresponding configs for authentication and valid data structures are set up.
 
 ## Deployment
-- at minimum, the following components must be provided: end-user client, GRPC service, databases
-- GRPC backend(s) as Docker images, as well as a compose file that sets up all further dependencies (databases)
-- the stack will be deployed on a server (you'll get credentials and IP from us — it's a Linux box with Debian)
-- SSL is not necessary
+- at minimum, the following components must be provided: end-user client, GRPC service, databases (sql script / bash script /setup via code)
+- all components source code is contained in one repository, ready to clone and run
